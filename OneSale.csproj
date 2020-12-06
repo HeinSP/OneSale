@@ -119,6 +119,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Elements\Category.cs" />
+    <Compile Include="Elements\Const.cs" />
+    <Compile Include="Elements\Link.cs" />
+    <Compile Include="Elements\Plan.cs" />
+    <Compile Include="Elements\Price.cs" />
+    <Compile Include="Elements\Product.cs" />
+    <Compile Include="Elements\Shop.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
