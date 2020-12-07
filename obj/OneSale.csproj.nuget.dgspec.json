@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hein\\source\\repos\\OneSale\\OneSale.csproj": {}
+    "D:\\Hein\\source\\repos\\OneSale\\OneSale.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hein\\source\\repos\\OneSale\\OneSale.csproj": {
+    "D:\\Hein\\source\\repos\\OneSale\\OneSale.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hein\\source\\repos\\OneSale\\OneSale.csproj",
+        "projectUniqueName": "D:\\Hein\\source\\repos\\OneSale\\OneSale.csproj",
         "projectName": "OneSale",
-        "projectPath": "C:\\Users\\Hein\\source\\repos\\OneSale\\OneSale.csproj",
+        "projectPath": "D:\\Hein\\source\\repos\\OneSale\\OneSale.csproj",
         "packagesPath": "C:\\Users\\Hein\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hein\\source\\repos\\OneSale\\obj\\",
+        "outputPath": "D:\\Hein\\source\\repos\\OneSale\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -41,7 +41,11 @@
           "dependencies": {
             "Microsoft.NETCore.UniversalWindowsPlatform": {
               "target": "Package",
-              "version": "[6.2.10, )"
+              "version": "[6.2.11, )"
+            },
+            "Microsoft.UI.Xaml": {
+              "target": "Package",
+              "version": "[2.5.0, )"
             }
           },
           "imports": [

@@ -27,17 +27,6 @@ namespace OneSale.Elements
         m
     }
 
-    enum Mall : int
-    {
-        None,
-        Taobao,
-        JD,
-        PDD,
-        Suning,
-        Xiaomi,
-        Youpin,
-        Yanxuan
-    }
     enum ShopGrade : int
     {
         A,
@@ -46,7 +35,7 @@ namespace OneSale.Elements
         D,
         E
     }
-    class Const
+    abstract class Const
     {
     }
 }

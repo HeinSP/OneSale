@@ -10,7 +10,7 @@ namespace OneSale.Elements
     {
         //TODO :
 
-        long id;
+        long num;
         Dictionary<Link, int> deals;
         double originPrice;
         double finalPrice;

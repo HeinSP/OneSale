@@ -10,7 +10,7 @@ namespace OneSale.Elements
     {
         //TODO :
 
-        long id;
+        long num;
         Product product;
         Quality quality;
         Unit unit;

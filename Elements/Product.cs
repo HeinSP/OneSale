@@ -21,14 +21,14 @@ namespace OneSale.Elements
             return null;
         }
         string caption;
-        long id;
+        long num;
         Category rootCategory;
         Category secondCategory;
         Category thridCategory;
         Category specialCategory;
 
         public string Caption { get => caption; set => caption = value; }
-        public long Id { get => id; set => id = value; }
+        public long Num { get => num; set => num = value; }
         internal Category RootCategory { get => rootCategory; set => rootCategory = value; }
         internal Category SecondCategory { get => secondCategory; set => secondCategory = value; }
         internal Category ThridCategory { get => thridCategory; set => thridCategory = value; }

@@ -25,6 +25,33 @@ namespace OneSale
         public MainPage()
         {
             this.InitializeComponent();
+
+            try
+            {
+                string libInfo = dataLib.Connect();
+                LibInfoBar.Message = libInfo;
+                if (libInfo == Lib.DataLib.SuccessfulInfo)
+                {
+                    //LibInfoBar.IconSource = new Microsoft.UI.Xaml.Controls.FontIconSource() {FontFamily = new FontFamily("Segoe MDL2 Assets"), Glyph = "\xE10B" };
+                    LibInfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Success;
+                }
+                else
+                {
+                    LibInfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Error;
+                }
+            }
+            catch
+            {
+                
+            }
+        }
+
+        internal Lib.DataLib dataLib = new Lib.DataLib();
+
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            splitView.Height = ActualHeight - commandBar.ActualHeight;
+            tbkInfo.Text = "Page Size : " + this.ActualSize.ToString();
         }
     }
 }

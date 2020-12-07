@@ -20,11 +20,13 @@ namespace OneSale.Elements
         {
             return 0;
         }
-
-        Mall mall = Mall.None;
+        int num;
+        string name;
+        Mall mall;
         ShopGrade shopGrade = ShopGrade.A;
 
         internal Mall Mall { get => mall; set => mall = value; }
         internal ShopGrade ShopGrade { get => shopGrade; set => shopGrade = value; }
+        public string Name { get => name; set => name = value; }
     }
 }

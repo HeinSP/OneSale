@@ -13,14 +13,11 @@ namespace OneSale.Lib
         {
             string strConnection = "Server=localhost; initial catalog=Ceres;";
             strConnection = "Data Source = 127.0.0.1; Initial Catalog = Ceres; User ID = sa; Password = 0506Hein";
-            //strConnection = "Data Source = HEIN-R7000\\SQLEXPRESS; database = Ceres;  Integrated Security = True";
-            //strConnection += "user id = sa; password = 0506Hein;";
-
             SqlConnection connection = new SqlConnection(strConnection);
             try
             {
                 connection.Open();
-                return "OK";
+                return SuccessfulInfo;
             }
             catch(Exception e)
             {
@@ -28,5 +25,7 @@ namespace OneSale.Lib
                 return e.Message;
             }
         }
+
+        static internal readonly string SuccessfulInfo = "DataLib connected successfully.";
     }
 }
