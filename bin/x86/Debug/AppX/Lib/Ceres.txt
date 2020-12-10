@@ -1,2 +1,0 @@
-﻿CREATE TABLE Shop(
-Num INT NOT NULL)

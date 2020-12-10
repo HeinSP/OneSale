@@ -34,8 +34,11 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Lib\Ceres.txt">
-      <PackagePath>Lib\Ceres.txt</PackagePath>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Lib\CeresTemp.txt">
+      <PackagePath>Lib\CeresTemp.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Lib\Initialization.sql">
+      <PackagePath>Lib\Initialization.sql</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
