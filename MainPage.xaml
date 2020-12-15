@@ -12,84 +12,66 @@
     <Page.Background>
         <media:AcrylicBrush BackgroundSource="HostBackdrop" TintOpacity="0.3" TintColor="#E6E6E6" FallbackColor="#E6E6E6" />
     </Page.Background>
-    <StackPanel>
-        <CommandBar x:Name="commandBar" Height="Auto" DefaultLabelPosition="Right">
-            <CommandBar.Background>
-                <media:AcrylicBrush BackgroundSource="HostBackdrop" TintOpacity="0.8" TintColor="#e6e6e6" />
-            </CommandBar.Background>
-            <AppBarButton x:Name="btnAddPanel" Icon="Add" Label="Add">
-                <AppBarButton.KeyboardAccelerators>
-                    <KeyboardAccelerator Modifiers="Control" Key="N" />
-                </AppBarButton.KeyboardAccelerators>
-                <AppBarButton.Flyout>
-                    <MenuFlyout>
-                        <MenuFlyoutItem Text="Link">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xE71B;"/>
-                            </MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Product">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xE74C;"/>
-                            </MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Plan">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xE762;"/>
-                            </MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutSeparator/>
-                        <MenuFlyoutItem Text="Shop">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xF133;"/>
-                            </MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Mall">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xE753;"/>
-                            </MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Category">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xF168;"/>
-                            </MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                    </MenuFlyout>
-                </AppBarButton.Flyout>
-            </AppBarButton>
-            <AppBarSeparator />
-            <AppBarButton Label="Group View">
-                <AppBarButton.Icon>
-                    <FontIcon Glyph="&#xF168;"/>
-                </AppBarButton.Icon>
-                <AppBarButton.KeyboardAccelerators>
-                    <KeyboardAccelerator Modifiers="Control" Key="G" />
-                </AppBarButton.KeyboardAccelerators>
-            </AppBarButton>
-            <AppBarButton Label="Seprated View">
-                <AppBarButton.Icon>
-                    <FontIcon Glyph="&#xF0E2;"/>
-                </AppBarButton.Icon>
-                <AppBarButton.KeyboardAccelerators>
-                    <KeyboardAccelerator Modifiers="Control" Key="E" />
-                </AppBarButton.KeyboardAccelerators>
-            </AppBarButton>
-            <AppBarSeparator />
-            <AppBarButton Icon="Setting" Label="Settings">
-                <AppBarButton.KeyboardAccelerators>
-                    <KeyboardAccelerator Modifiers="Control" Key="I" />
-                </AppBarButton.KeyboardAccelerators>
-            </AppBarButton>
-            <CommandBar.SecondaryCommands>
-                <AppBarButton Label="About">
-                    <AppBarButton.Icon>
-                        <FontIcon Glyph="&#xE946;"/>
-                    </AppBarButton.Icon>
-                </AppBarButton>
-            </CommandBar.SecondaryCommands>
-        </CommandBar>
+    <RelativePanel>
+        <muxc:NavigationView x:Name="navigationView"
+            IsSettingsVisible="True"
+            IsBackButtonVisible="Collapsed"
+            IsBackEnabled="True"
+            SelectionChanged="NavigationView_SelectionChanged"
+            Header="Sample Page 2"
+            AlwaysShowHeader="True"
+            PaneTitle="Pane tle"
+            PaneDisplayMode="Top"
+            ExpandedModeThresholdWidth="500"
+            SelectionFollowsFocus="Disabled"
+            IsTabStop="False"
+            RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
 
-        <SplitView x:Name="splitView" x:FieldModifier="Public" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" IsPaneOpen="False" PanePlacement="Right" OpenPaneLength="240" DisplayMode="Overlay">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem Content="Links" Tag="Links" x:Name="LinkItem">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE71B;"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem Content="Products" Tag="Products" x:Name="ProductsItem" SelectsOnInvoked="True">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE74C;"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem Content="Plans" Tag="Plans" x:Name="PlansItem">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE762;"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                
+                <muxc:NavigationViewItem Content="Shops" Tag="Shops" x:Name="ShopsItem">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xF133;"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem Content="Malls" Tag="Malls" x:Name="MallsItem">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE753;"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem Content="Categories" Tag="Categories" x:Name="CategoriesItem">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xF168;"/>
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+
+                <muxc:NavigationViewItemHeader Content="Actions"/>
+            </muxc:NavigationView.MenuItems>
+
+            <muxc:NavigationView.PaneFooter>
+                <StackPanel x:Name="FooterStackPanel" Orientation="Vertical" Visibility="Visible">
+                    <muxc:NavigationViewItem Icon="Download" AutomationProperties.Name="download" />
+                </StackPanel>
+            </muxc:NavigationView.PaneFooter>
+
+            <Frame x:Name="contentFrame" />
+        </muxc:NavigationView>
+        <SplitView RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" x:Name="splitView" x:FieldModifier="Public" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" IsPaneOpen="False" PanePlacement="Right" OpenPaneLength="240" DisplayMode="Overlay">
             <SplitView.Pane>
                 <StackPanel Padding="20" Orientation="Vertical" Width="240" HorizontalAlignment="Left">
                     <TextBlock Text="Test"></TextBlock>
@@ -98,13 +80,54 @@
             <Grid x:Name="borderContent">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
-                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="100"></RowDefinition>
                 </Grid.RowDefinitions>
                 <GridView x:Name="timersPanel" Width="auto" HorizontalContentAlignment="Center" Padding="0"/>
-                <TextBlock x:Name="tbkInfo"  Grid.Row="1"/>
-                <muxc:InfoBar  Grid.Row="2" VerticalAlignment="Bottom" x:Name="LibInfoBar" IsOpen="True" IsIconVisible="True" IsClosable="False" Title="" Message="This is the information bar." />
+                <TextBlock DataContext="this is a text block."/>
+                <CommandBar Grid.Row="2" x:Name="commandBar" Height="Auto" DefaultLabelPosition="Right" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                    <CommandBar.Background>
+                        <media:AcrylicBrush BackgroundSource="HostBackdrop" TintOpacity="0.8" TintColor="#e6e6e6" />
+                    </CommandBar.Background>
+                    <AppBarButton x:Name="btnAddPanel" Icon="Add" Label="Add">
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Control" Key="N" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <AppBarSeparator />
+                    <AppBarButton Label="Group View">
+                        <AppBarButton.Icon>
+                            <FontIcon Glyph="&#xF168;"/>
+                        </AppBarButton.Icon>
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Control" Key="G" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <AppBarButton Label="Seprated View">
+                        <AppBarButton.Icon>
+                            <FontIcon Glyph="&#xF0E2;"/>
+                        </AppBarButton.Icon>
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Control" Key="E" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <AppBarSeparator />
+                    <AppBarButton Icon="Setting" Label="Settings">
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Control" Key="I" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                    <CommandBar.SecondaryCommands>
+                        <AppBarButton Label="About">
+                            <AppBarButton.Icon>
+                                <FontIcon Glyph="&#xE946;"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                    </CommandBar.SecondaryCommands>
+                </CommandBar>
             </Grid>
         </SplitView>
-    </StackPanel>
+        <TextBlock x:Name="tbkInfo" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Above="LibInfoBar"/>
+        <muxc:InfoBar RelativePanel.AlignBottomWithPanel="True" x:Name="LibInfoBar" IsOpen="True" IsIconVisible="True" IsClosable="False" Title="" Message="This is the information bar3." RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
+    </RelativePanel>
 </Page>

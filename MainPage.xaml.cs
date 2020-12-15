@@ -45,13 +45,38 @@ namespace OneSale
                 
             }
         }
-
+        private void Initialize()
+        {
+            
+        }
         internal Lib.DataLib dataLib = new Lib.DataLib();
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             splitView.Height = ActualHeight - commandBar.ActualHeight;
             tbkInfo.Text = "Page Size : " + this.ActualSize.ToString();
+        }
+
+        private void NavigationView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
+        {
+            /*
+             * if (args.IsSettingsSelected)
+            {
+                contentFrame.Navigate(typeof(SampleSettingsPage));
+            }
+            else
+            {
+                var selectedItem = (Microsoft.UI.Xaml.Controls.NavigationViewItem)args.SelectedItem;
+                if (selectedItem != null)
+                {
+                    string selectedItemTag = ((string)selectedItem.Tag);
+                    sender.Header = "Sample Page " + selectedItemTag.Substring(selectedItemTag.Length - 1);
+                    string pageName = "AppUIBasics.SamplePages." + selectedItemTag;
+                    Type pageType = Type.GetType(pageName);
+                    contentFrame.Navigate(pageType);
+                }
+            }
+            */
         }
     }
 }
