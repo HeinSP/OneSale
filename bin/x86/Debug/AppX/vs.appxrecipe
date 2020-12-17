@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\Hein\source\repos\OneSale\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>F5CEF35AC581797296E0C9A567CF7194FFEC0853BA01BD2F6CEABC5A53DEF8C4</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>9A737A64F3D00D81542B344CE1CEF9B2C77B52C66E410C04B53843E1DF8015D4</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>079b927d-e32e-4b47-ac64-97a7f461c25d_1.0.0.0_x86__e3ntqqedm1dva</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>079b927d-e32e-4b47-ac64-97a7f461c25d_e3ntqqedm1dva!App</RegisteredUserModeAppID>
     <RegisteredPackageID>079b927d-e32e-4b47-ac64-97a7f461c25d</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-15T02:25:17.085</Modified>
+      <Modified>2020-12-17T07:36:29.855</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\OneSale.exe">
       <PackagePath>entrypoint\OneSale.exe</PackagePath>
-      <Modified>2020-12-15T02:25:16.393</Modified>
+      <Modified>2020-12-17T07:36:29.141</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hein\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.11\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
@@ -94,19 +94,31 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\OneSale.xr.xml">
       <PackagePath>OneSale.xr.xml</PackagePath>
-      <Modified>2020-12-15T02:25:16.324</Modified>
+      <Modified>2020-12-17T07:28:20.592</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-15T02:25:16.333</Modified>
+      <Modified>2020-12-17T07:36:29.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-15T02:25:16.332</Modified>
+      <Modified>2020-12-17T07:36:29.079</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Styles\Universal.xbf">
       <PackagePath>Styles\Universal.xbf</PackagePath>
-      <Modified>2020-12-15T02:25:16.332</Modified>
+      <Modified>2020-12-17T07:36:29.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\LinksPage.xbf">
+      <PackagePath>Views\LinksPage.xbf</PackagePath>
+      <Modified>2020-12-17T07:36:29.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\ProductsPage.xbf">
+      <PackagePath>Views\ProductsPage.xbf</PackagePath>
+      <Modified>2020-12-17T07:36:29.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\SettingsPage.xbf">
+      <PackagePath>Views\SettingsPage.xbf</PackagePath>
+      <Modified>2020-12-17T07:36:29.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -122,11 +134,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-12-07T12:47:40.427</Modified>
+      <Modified>2020-12-17T06:40:59.255</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Core\OneSale.exe">
       <PackagePath>OneSale.exe</PackagePath>
-      <Modified>2020-12-15T02:25:17.081</Modified>
+      <Modified>2020-12-17T07:36:29.851</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

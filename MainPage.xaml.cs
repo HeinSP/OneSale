@@ -25,7 +25,12 @@ namespace OneSale
         public MainPage()
         {
             this.InitializeComponent();
-
+            InitializeDataLib();
+            Initialize();
+            
+        }
+        private void InitializeDataLib()
+        {
             try
             {
                 string libInfo = dataLib.Connect();
@@ -42,27 +47,26 @@ namespace OneSale
             }
             catch
             {
-                
+
             }
         }
         private void Initialize()
         {
-            
+            navigationView.SelectedItem = navigationView.MenuItems.OfType<Microsoft.UI.Xaml.Controls.NavigationViewItem>().First();
         }
         internal Lib.DataLib dataLib = new Lib.DataLib();
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            splitView.Height = ActualHeight - commandBar.ActualHeight;
+            //splitView.Height = ActualHeight - commandBar.ActualHeight;
             tbkInfo.Text = "Page Size : " + this.ActualSize.ToString();
         }
 
         private void NavigationView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
         {
-            /*
-             * if (args.IsSettingsSelected)
+            if (args.IsSettingsSelected)
             {
-                contentFrame.Navigate(typeof(SampleSettingsPage));
+                navigationFrame.Navigate(typeof(Views.SettingsPage));
             }
             else
             {
@@ -70,13 +74,12 @@ namespace OneSale
                 if (selectedItem != null)
                 {
                     string selectedItemTag = ((string)selectedItem.Tag);
-                    sender.Header = "Sample Page " + selectedItemTag.Substring(selectedItemTag.Length - 1);
-                    string pageName = "AppUIBasics.SamplePages." + selectedItemTag;
+                    sender.Header = selectedItemTag;
+                    string pageName = "OneSale.Views." + selectedItemTag + "Page";
                     Type pageType = Type.GetType(pageName);
-                    contentFrame.Navigate(pageType);
+                    navigationFrame.Navigate(pageType);
                 }
             }
-            */
         }
     }
 }

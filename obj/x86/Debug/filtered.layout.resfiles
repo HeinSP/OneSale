@@ -10,6 +10,9 @@ App.xbf
 MainPage.xbf
 OneSale.xr.xml
 Styles\Universal.xbf
+Views\LinksPage.xbf
+Views\ProductsPage.xbf
+Views\SettingsPage.xbf
 Lib\CeresTemp.txt
 Lib\Initialization.sql
 Properties\Default.rd.xml
