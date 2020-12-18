@@ -7,12 +7,14 @@ Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
+Dictionary1.xbf
 MainPage.xbf
 OneSale.xr.xml
-Styles\Universal.xbf
+Universal\Styles.xbf
 Views\LinksPage.xbf
 Views\ProductsPage.xbf
 Views\SettingsPage.xbf
+Views\ViewsDictionary.xbf
 Lib\CeresTemp.txt
 Lib\Initialization.sql
 Properties\Default.rd.xml

@@ -61,7 +61,10 @@ namespace OneSale
             //splitView.Height = ActualHeight - commandBar.ActualHeight;
             tbkInfo.Text = "Page Size : " + this.ActualSize.ToString();
         }
-
+        private void NviAdd_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+        }
         private void NavigationView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
         {
             if (args.IsSettingsSelected)
@@ -80,6 +83,11 @@ namespace OneSale
                     navigationFrame.Navigate(pageType);
                 }
             }
+        }
+
+        private void NavigationViewItem_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
         }
     }
 }
