@@ -7,10 +7,9 @@ Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
-Dictionary1.xbf
 MainPage.xbf
 OneSale.xr.xml
-Universal\Styles.xbf
+Styles\Styles.xbf
 Views\LinksPage.xbf
 Views\ProductsPage.xbf
 Views\SettingsPage.xbf

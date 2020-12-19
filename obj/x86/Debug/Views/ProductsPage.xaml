@@ -8,8 +8,26 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock FontSize="48">This is the products page.</TextBlock>
-    </Grid>
+    <RelativePanel Background="AliceBlue" Width="500" Height="72">
+        <TextBlock x:ConnectionId='2' RelativePanel.AlignTopWithPanel="True"
+                   RelativePanel.AlignLeftWithPanel="True"
+                   x:Name="tbkName" Margin="0,4,0,8"
+                   FontSize="16" Text="This is the products page.ApplicationPageBackgroundThemeBrush"/>
+        <FontIcon x:ConnectionId='3' RelativePanel.Below="tbkName" VerticalAlignment="Center"
+                  x:Name="icon" Glyph="&#xEA79;" Width="32" Height="32"/>
+        <Rectangle x:ConnectionId='4' RelativePanel.RightOf="icon"
+                   RelativePanel.Below="tbkName"
+                   x:Name="rect" Fill="LightSlateGray"
+                   Width="32" Height="32"/>
+        <TextBlock x:ConnectionId='5' x:Name="oPrice"
+                   RelativePanel.RightOf="rect"
+                   RelativePanel.Below="tbkName"
+                   VerticalAlignment="Center"
+                   Text="Origin : 222.33"/>
+        <TextBlock x:ConnectionId='6' x:Name="final"
+                   RelativePanel.Below="tbkName"
+                   RelativePanel.AlignRightWithPanel="True"
+                   Text="Final : 80.66" FontSize="28"/>
+    </RelativePanel>
 </Page>
 

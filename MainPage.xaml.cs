@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Universal.SqlSOperation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -31,30 +32,22 @@ namespace OneSale
         }
         private void InitializeDataLib()
         {
+            string server = "127.0.0.1", database = "Ceres", userID = "sa", password = "0506Hein";
             try
             {
-                string libInfo = dataLib.Connect();
-                LibInfoBar.Message = libInfo;
-                if (libInfo == Lib.DataLib.SuccessfulInfo)
-                {
-                    //LibInfoBar.IconSource = new Microsoft.UI.Xaml.Controls.FontIconSource() {FontFamily = new FontFamily("Segoe MDL2 Assets"), Glyph = "\xE10B" };
-                    LibInfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Success;
-                }
-                else
-                {
-                    LibInfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Error;
-                }
+                DataLib.InitializeConnection(server, database, userID, password);
+                LibInfoBar.Message = "DataLib connected successfully.";
+                LibInfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Success;
             }
-            catch
+            catch (Exception e)
             {
-
+                LibInfoBar.Message = e.Message;
             }
         }
         private void Initialize()
         {
             navigationView.SelectedItem = navigationView.MenuItems.OfType<Microsoft.UI.Xaml.Controls.NavigationViewItem>().First();
         }
-        internal Lib.DataLib dataLib = new Lib.DataLib();
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OneSale.Lib
 {
-    class DataLib
+    class DataLib2
     {
         public string Connect()
         {
