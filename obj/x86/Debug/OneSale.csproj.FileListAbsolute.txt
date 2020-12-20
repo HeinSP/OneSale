@@ -82,3 +82,8 @@ D:\Hein\source\repos\OneSale\obj\x86\Debug\Styles\Styles.xaml
 D:\Hein\source\repos\OneSale\obj\x86\Debug\Styles\Styles.xbf
 D:\Hein\source\repos\OneSale\obj\x86\Debug\FxResources.Microsoft.Win32.Registry.SR.resw
 D:\Hein\source\repos\OneSale\obj\x86\Debug\FxResources.System.Text.Encoding.CodePages.SR.resw
+D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\CategoriesPage.xbf
+D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\CategoriesPage.g.i.cs
+D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\CategoriesPage.g.cs
+D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\CategoriesPage.xaml
+D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\CategoriesPage.xbf

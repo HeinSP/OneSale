@@ -19,6 +19,8 @@ using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Hosting;
 using Windows.UI;
 using System.Reflection;
+using OneSale.Elements;
+using Universal.SqlSOperation;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -33,43 +35,51 @@ namespace OneSale.Views
         {
             this.InitializeComponent();
             InitializeData();
+            InitializeCategory();
             //repeater2.ItemsSource = Enumerable.Range(0, 500);
         }
+
+        private void InitializeCategory()
+        {
+            categories.Clear();
+            first.Clear();
+            second.Clear();
+            third.Clear();
+            special.Clear();
+            SelectLib categoryLib = new SelectLib("categoryLib");
+            categoryLib.GetReader("Categories", "");
+            categories = Category.GetCategories(categoryLib.DbReader);
+            foreach (Category category in categories)
+            {
+                switch (category.CategoryGrade)
+                {
+                    case CategoryGrade.First:
+                        {
+                            first.Add(category);
+                            cbxFirst.Items.Add(category.Caption);
+                            break;
+                        }
+                }
+            }
+        }
+
+        ObservableCollection<Category> categories = new ObservableCollection<Category>();
+        ObservableCollection<Category> first = new ObservableCollection<Category>();
+        ObservableCollection<Category> second = new ObservableCollection<Category>();
+        ObservableCollection<Category> third = new ObservableCollection<Category>();
+        ObservableCollection<Category> special = new ObservableCollection<Category>();
+
+
+
         private Random random = new Random();
         private int MaxLength = 425;
 
-        public ObservableCollection<Bar> BarItems;
         public MyItemsSource filteredRecipeData = new MyItemsSource(null);
         public List<Recipe> staticRecipeData;
         private bool IsSortDescending = false;
 
-        private double AnimatedBtnHeight;
-        private Thickness AnimatedBtnMargin;
-
         private void InitializeData()
         {
-            if (BarItems == null)
-            {
-                BarItems = new ObservableCollection<Bar>();
-            }
-            BarItems.Add(new Bar(300, this.MaxLength));
-            BarItems.Add(new Bar(25, this.MaxLength));
-            BarItems.Add(new Bar(175, this.MaxLength));
-
-            List<object> basicData = new List<object>
-            {
-                64,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                128,
-                "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                256,
-                "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-                512,
-                "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                1024
-            };
-            //MixedTypeRepeater.ItemsSource = basicData;
-
             List<NestedCategory> nestedCategories = new List<NestedCategory>
             {
                 new NestedCategory("Fruits", GetFruits()),
@@ -319,6 +329,51 @@ namespace OneSale.Views
             filteredRecipeData.InitializeCollection(sortedFilteredTypes);
             */
         }
+
+        private void cbxFirst_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string caption = cbxFirst.SelectedItem.ToString();
+            Category categorySelected = new Category(categories.Single(check => check.Caption == caption).Num, caption);
+            second.Clear();
+            third.Clear();
+            special.Clear();
+            cbxSecond.Items.Clear();
+            cbxThird.Items.Clear();
+            foreach (Category c in categories)
+            {
+                if (c.Num[0] == categorySelected.Num[0] && c.CategoryGrade == CategoryGrade.Second)
+                {
+                    second.Add(c);
+                    cbxSecond.Items.Add(c.Caption);
+                }
+            }
+        }
+
+        private void cbxSecond_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbxSecond.Items.Count == 0)
+            {
+                return;
+            }
+            string caption = cbxSecond.SelectedItem.ToString();
+            Category categorySelected = new Category(categories.Single(check => check.Caption == caption).Num, caption);
+            third.Clear();
+            special.Clear();
+            cbxThird.Items.Clear();
+            foreach (Category c in categories)
+            {
+                if (c.Num.Remove(2) == categorySelected.Num.Remove(2) && c.CategoryGrade == CategoryGrade.Third)
+                {
+                    third.Add(c);
+                    cbxThird.Items.Add(c.Caption);
+                }
+            }
+        }
+
+        private void cbxThird_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 
     public class NestedCategory
@@ -488,6 +543,8 @@ namespace OneSale.Views
 
         #endregion
 
+
+        // TODO: 通过序号或key（主键）检索，待重写此功能后删除
         #region IKeyIndexMapping
         public string KeyFromIndex(int index)
         {

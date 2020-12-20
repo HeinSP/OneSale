@@ -71,18 +71,20 @@
       <RootProperty Name="OpenPaneLength" />
       <RootProperty Name="DisplayMode" />
       <RootProperty Name="Pane" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="SizeChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Style" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Style" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Padding" />
       <RootProperty Name="Foreground" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Inlines" />
     </RootType>
     <RootType FullName="Microsoft.UI.Xaml.Controls.InfoBar">
@@ -100,8 +102,8 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Children" />
       <RootProperty Name="Visibility" />
-      <RootProperty Name="BorderThickness" />
       <RootProperty Name="Background" />
+      <RootProperty Name="BorderThickness" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="Opacity" />
@@ -157,6 +159,7 @@
       <RootProperty Name="Label" />
       <RootProperty Name="Style" />
       <RootProperty Name="KeyboardAccelerators" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
@@ -165,10 +168,14 @@
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Border">
-      <RootProperty Name="Child" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Tag" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="Background" />
       <RootProperty Name="Height" />
@@ -201,16 +208,6 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="Microsoft.UI.Xaml.Controls.RadioButtons">
-      <RootProperty Name="SelectedIndex" />
-      <RootProperty Name="MaxColumns" />
-      <RootProperty Name="Items" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Content" />
-      <RootProperty Name="Margin" />
-    </RootType>
-    <RootType FullName="System.String" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
@@ -224,20 +221,37 @@
       <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Name" />
+      <RootEvent Name="SelectionChanged" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="ZoomMode" />
+      <RootProperty Name="VerticalScrollMode" />
+      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Microsoft.UI.Xaml.Controls.ItemsRepeaterScrollHost">
       <RootProperty Name="ScrollViewer" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Content" />
-    </RootType>
     <RootType FullName="Microsoft.UI.Xaml.Controls.ItemsRepeater">
+      <RootProperty Name="Tag" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="Layout" />
     </RootType>
     <RootType FullName="OneSale.Common.VariedImageSizeLayout">
       <RootProperty Name="Width" />
     </RootType>
+    <RootType FullName="OneSale.Views.CategoriesPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="Child" />
+    </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.RadioButtons">
+      <RootProperty Name="SelectedIndex" />
+      <RootProperty Name="MaxColumns" />
+      <RootProperty Name="Items" />
+    </RootType>
+    <RootType FullName="System.String" />
     <RootType FullName="OneSale.Views.LinksPage" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Fill" />

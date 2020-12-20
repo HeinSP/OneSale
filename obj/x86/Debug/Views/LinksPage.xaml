@@ -3,9 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:OneSale.Views"
+    xmlns:cat="OneSale.Views.CategoriesPage"
     xmlns:common="using:OneSale.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:media="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:media="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d" Background="Transparent">
 
     <Page.Resources>
@@ -29,7 +31,7 @@
         <Border x:ConnectionId='8' x:Name="itemsRepeaterBorder" RelativePanel.LeftOf="filterPanel" RelativePanel.AlignBottomWith="commandBar" RelativePanel.AlignTopWithPanel="True">
             <muxc:ItemsRepeaterScrollHost>
                 <ScrollViewer>
-                    <muxc:ItemsRepeater x:ConnectionId='14' x:Name="VariedImageSizeRepeater"
+                    <muxc:ItemsRepeater x:ConnectionId='17' x:Name="VariedImageSizeRepeater"
 			            ItemTemplate="{StaticResource RecipeTemplate}">
 
                         <muxc:ItemsRepeater.Layout>
@@ -58,9 +60,9 @@
                 <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Second"/>
                 <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Third"/>
                 <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Text="Special"/>
-                <ComboBox Grid.Column="1" Grid.Row="0" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0"></ComboBox>
-                <ComboBox Grid.Column="1" Grid.Row="1" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0"></ComboBox>
-                <ComboBox Grid.Column="1" Grid.Row="2" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0"></ComboBox>
+                <ComboBox x:ConnectionId='14' Grid.Column="1" Grid.Row="0" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0" x:Name="cbxFirst"                                             ></ComboBox>
+                <ComboBox x:ConnectionId='15' Grid.Column="1" Grid.Row="1" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0" x:Name="cbxSecond"                                              ></ComboBox>
+                <ComboBox x:ConnectionId='16' Grid.Column="1" Grid.Row="2" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0" Name="cbxThird"                                             ></ComboBox>
                 <ComboBox Grid.Column="1" Grid.Row="3" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0"></ComboBox>
             </Grid>
             

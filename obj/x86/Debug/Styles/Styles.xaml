@@ -11,7 +11,7 @@
             TintOpacity="0.7" TintColor="#E6E6E6" FallbackColor="#E6E6E6" />
 
     <x:Double x:Key="UniversalHeaderFontSize">36</x:Double>
-    <x:Double x:Key="UniversalSubFontSize">28</x:Double>
+    <x:Double x:Key="UniversalSubFontSize">26</x:Double>
     <x:Double x:Key="UniversalContentFontSize">16</x:Double>
     <Thickness x:Key="UniversalSubMargin">4,4,4,8</Thickness>
     <Thickness x:Key="UniversalContentMargin">4,4,4,4</Thickness>
@@ -36,7 +36,7 @@
     </Style>
 
     <Style TargetType="ContentControl" x:Key="UniversalHeaderStyle">
-        <Setter Property="FontSize" Value="HeaderFontSize"/>
+        <Setter Property="FontSize" Value="UniversalHeaderFontSize"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
 </ResourceDictionary>

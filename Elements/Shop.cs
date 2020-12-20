@@ -21,12 +21,12 @@ namespace OneSale.Elements
             return 0;
         }
         int num;
-        string name;
+        string caption;
         Mall mall;
         ShopGrade shopGrade = ShopGrade.A;
 
         internal Mall Mall { get => mall; set => mall = value; }
         internal ShopGrade ShopGrade { get => shopGrade; set => shopGrade = value; }
-        public string Name { get => name; set => name = value; }
+        public string Caption { get => caption; set => caption = value; }
     }
 }

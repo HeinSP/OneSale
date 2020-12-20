@@ -10,6 +10,7 @@ App.xbf
 MainPage.xbf
 OneSale.xr.xml
 Styles\Styles.xbf
+Views\CategoriesPage.xbf
 Views\LinksPage.xbf
 Views\ProductsPage.xbf
 Views\SettingsPage.xbf

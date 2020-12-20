@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace OneSale.Elements
 {
-    enum Categories : int
+    enum CategoryGrade : int
     {
-        AllGoods
+        MainRoot,
+        First,
+        Second,
+        Third,
+        Special,
+        Complementary
     }
     enum Quality : int
     {

@@ -9,6 +9,6 @@ namespace OneSale.Elements
     class Mall
     {
         int num;
-        string Name;
+        string caption;
     }
 }
