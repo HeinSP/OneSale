@@ -19,7 +19,7 @@
                       RelativePanel.AlignLeftWithPanel="True" 
                       x:FieldModifier="public"
                       x:Name="LibInfoBar" IsOpen="True" IsIconVisible="True" IsClosable="False" Title="" Message="This is the information bar3." />
-        <TextBlock x:ConnectionId='3' x:Name="tbkInfo" 
+        <TextBlock x:ConnectionId='3' x:Name="tbkInfo" x:FieldModifier="public"
                    RelativePanel.AlignRightWithPanel="True" 
                    RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.Above="LibInfoBar"/>

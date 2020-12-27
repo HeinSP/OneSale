@@ -26,10 +26,11 @@ namespace OneSale.Views
         public ShopsPage()
         {
             this.InitializeComponent();
-            for (int i = 0; i != 20; i++)
-            {
-                MainPage.Current.Shops.Add(new Shop(i, "Testing performance ..."));
-            }
+            Lib.Spider spider = new Lib.Spider();
+            string title = spider.GetInformation("https://mall.jd.com/index-1000005001.html");
+            title = title.Trim();
+            title = title.Remove(title.Length - 5);
+            MainPage.Current.LibInfoBar.Message = "====" + title + "====";
         }
     }
 }

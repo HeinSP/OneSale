@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-12-27T01:28:26.144</Modified>
+      <Modified>2020-12-27T18:27:44.150</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\OneSale.exe">
       <PackagePath>entrypoint\OneSale.exe</PackagePath>
-      <Modified>2020-12-27T01:28:25.136</Modified>
+      <Modified>2020-12-27T18:27:43.402</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Hein\.nuget\packages\microsoft.data.sqlclient\2.1.1\runtimes\win\lib\netstandard2.0\Microsoft.Data.SqlClient.dll">
       <PackagePath>Microsoft.Data.SqlClient.dll</PackagePath>
@@ -198,47 +198,51 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\OneSale.xr.xml">
       <PackagePath>OneSale.xr.xml</PackagePath>
-      <Modified>2020-12-27T01:23:37.339</Modified>
+      <Modified>2020-12-27T04:18:44.147</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.022</Modified>
+      <Modified>2020-12-27T18:27:43.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.010</Modified>
+      <Modified>2020-12-27T18:27:43.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Styles\Styles.xbf">
       <PackagePath>Styles\Styles.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.022</Modified>
+      <Modified>2020-12-27T18:27:43.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\CategoriesPage.xbf">
       <PackagePath>Views\CategoriesPage.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.015</Modified>
+      <Modified>2020-12-27T18:27:43.291</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\LinksPage.xbf">
       <PackagePath>Views\LinksPage.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.019</Modified>
+      <Modified>2020-12-27T18:27:43.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\MallsPage.xbf">
       <PackagePath>Views\MallsPage.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.022</Modified>
+      <Modified>2020-12-27T18:27:43.300</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\PlansPage.xbf">
+      <PackagePath>Views\PlansPage.xbf</PackagePath>
+      <Modified>2020-12-27T18:27:43.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\ProductsPage.xbf">
       <PackagePath>Views\ProductsPage.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.022</Modified>
+      <Modified>2020-12-27T18:27:43.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\SettingsPage.xbf">
       <PackagePath>Views\SettingsPage.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.022</Modified>
+      <Modified>2020-12-27T18:27:43.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\ShopsPage.xbf">
       <PackagePath>Views\ShopsPage.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.022</Modified>
+      <Modified>2020-12-27T18:27:43.300</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\ViewsDictionary.xbf">
       <PackagePath>Views\ViewsDictionary.xbf</PackagePath>
-      <Modified>2020-12-27T01:28:25.022</Modified>
+      <Modified>2020-12-27T18:27:43.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -254,11 +258,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-12-27T01:28:25.383</Modified>
+      <Modified>2020-12-27T04:02:55.610</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Core\OneSale.exe">
       <PackagePath>OneSale.exe</PackagePath>
-      <Modified>2020-12-27T01:28:26.140</Modified>
+      <Modified>2020-12-27T18:27:44.148</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

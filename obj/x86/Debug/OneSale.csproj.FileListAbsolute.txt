@@ -97,3 +97,8 @@ D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\ShopsPage.g.i.cs
 D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\ShopsPage.g.cs
 D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\ShopsPage.xaml
 D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\ShopsPage.xbf
+D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\PlansPage.xbf
+D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\PlansPage.g.i.cs
+D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\PlansPage.g.cs
+D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\PlansPage.xaml
+D:\Hein\source\repos\OneSale\obj\x86\Debug\Views\PlansPage.xbf

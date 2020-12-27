@@ -15,7 +15,7 @@
         <DataTemplate x:Key="ProductTemplate"                              >
             <StackPanel x:ConnectionId='3' Width="208"                   >
                 <Rectangle Width="192" Height="192" Fill="Yellow"/>
-                <TextBlock x:ConnectionId='4' FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center"                        />
+                <TextBlock x:ConnectionId='4' FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center" x:Name="tbkCaption"                        />
             </StackPanel>
         </DataTemplate>
     </Page.Resources>

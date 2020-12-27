@@ -1,0 +1,21 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="OneSale.Views.PlansPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OneSale.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:ConnectionId='3' x:Name="tbxUrl" Width="800"/>
+            <Button x:ConnectionId='4' x:Name="btnGo" Content="go"                    />
+            <TextBox x:ConnectionId='5' x:Name="tbxAmount" Width="100" Text="80"/>
+            <Button x:ConnectionId='6' x:Name="btnClear" Content="Clear"                       />
+        </StackPanel>
+        <TextBox x:ConnectionId='2' x:Name="tbxResult" Height="600" TextWrapping="Wrap"                                    />
+    </StackPanel>
+</Page>
+

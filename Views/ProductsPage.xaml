@@ -15,7 +15,7 @@
         <DataTemplate x:Key="ProductTemplate" x:DataType="elements:Product">
             <StackPanel Width="208" Tag="{x:Bind Num}">
                 <Rectangle Width="192" Height="192" Fill="Yellow"/>
-                <TextBlock FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center" Text="{x:Bind Caption}"/>
+                <TextBlock FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center" x:Name="tbkCaption" Text="{x:Bind Caption}"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>

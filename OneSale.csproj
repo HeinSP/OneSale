@@ -130,7 +130,7 @@
     <Compile Include="Elements\Product.cs" />
     <Compile Include="Elements\Recipe.cs" />
     <Compile Include="Elements\Shop.cs" />
-    <Compile Include="Lib\DataLib.cs" />
+    <Compile Include="Lib\Spider.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -143,6 +143,9 @@
     </Compile>
     <Compile Include="Views\MallsPage.xaml.cs">
       <DependentUpon>MallsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlansPage.xaml.cs">
+      <DependentUpon>PlansPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductsPage.xaml.cs">
       <DependentUpon>ProductsPage.xaml</DependentUpon>
@@ -206,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MallsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlansPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

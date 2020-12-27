@@ -169,6 +169,9 @@
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\MallsPage.xbf">
       <PackagePath>Views\MallsPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\PlansPage.xbf">
+      <PackagePath>Views\PlansPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\ProductsPage.xbf">
       <PackagePath>Views\ProductsPage.xbf</PackagePath>
     </AppxPackagedFile>

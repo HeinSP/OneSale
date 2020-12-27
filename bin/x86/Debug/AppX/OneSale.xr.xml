@@ -166,7 +166,9 @@
       <RootProperty Name="Margin" />
       <RootEvent Name="Click" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
+      <RootProperty Name="Mode" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="PanePlacement" />
       <RootProperty Name="DisplayMode" />
@@ -210,6 +212,9 @@
       <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition" />
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
@@ -268,6 +273,7 @@
       <RootProperty Name="UriSource" />
     </RootType>
     <RootType FullName="OneSale.Views.MallsPage" />
+    <RootType FullName="OneSale.Views.PlansPage" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
