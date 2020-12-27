@@ -29,36 +29,32 @@ namespace OneSale.Views
         {
             this.InitializeComponent();
             Current = this;
-            Initialize();
+            RefreshCategories();
         }
-        private void Initialize()
+        internal static void RefreshCategories()
         {
-            categories.Clear();
-            first.Clear();
-            second.Clear();
-            third.Clear();
-            special.Clear();
+            MainPage.Current.Categories.Clear();
+            MainPage.Current.First.Clear();
+            MainPage.Current.Second.Clear();
+            MainPage.Current.Third.Clear();
+            MainPage.Current.Special.Clear();
             SelectLib categoryLib = new SelectLib("categoryLib");
             categoryLib.GetReader("Categories", "");
-            categories = Category.GetCategories(categoryLib.DbReader);
-            foreach (Category category in categories)
+            MainPage.Current.Categories.Refresh(categoryLib.DbReader);
+            foreach (Category category in MainPage.Current.Categories)
             {
                 switch (category.CategoryGrade)
                 {
                     case CategoryGrade.First:
                         {
-                            first.Add(category);
+                            MainPage.Current.First.Add(category);
                             break;
                         }
                 }
             }
         }
         internal static CategoriesPage Current;
-        ObservableCollection<Category> categories = new ObservableCollection<Category>();
-        ObservableCollection<Category> first = new ObservableCollection<Category>();
-        ObservableCollection<Category> second = new ObservableCollection<Category>();
-        ObservableCollection<Category> third = new ObservableCollection<Category>();
-        ObservableCollection<Category> special = new ObservableCollection<Category>();
+        
         private void abtnMirroredView_Click(object sender, RoutedEventArgs e)
         {
             //rightGrid.Width = new GridLength(1, GridUnitType.Star);
@@ -78,45 +74,45 @@ namespace OneSale.Views
 
         private void btnCategory_Click(object sender, RoutedEventArgs e)
         {
-            string num = (sender as Button).Tag.ToString();
-            Category categorySelected = new Category(num, categories.Single(check => check.Num == num).Caption);
+            string caption = (sender as Button).Content.ToString();
+            Category categorySelected = MainPage.Current.Categories.Single(check => check.Caption == caption);
             switch (categorySelected.CategoryGrade)
             {
                 case CategoryGrade.First:
                     {
-                        second.Clear();
-                        third.Clear();
-                        special.Clear();
-                        foreach (Category c in categories)
+                        MainPage.Current.Second.Clear();
+                        MainPage.Current.Third.Clear();
+                        MainPage.Current.Special.Clear();
+                        foreach (Category c in MainPage.Current.Categories)
                         {
-                            if (c.Num[0] == categorySelected.Num[0] && c.CategoryGrade == CategoryGrade.Second)
+                            if (c.NumString[0] == categorySelected.NumString[0] && c.CategoryGrade == CategoryGrade.Second)
                             {
-                                second.Add(c);
+                                MainPage.Current.Second.Add(c);
                             }
                         }
                         break;
                     }
                 case CategoryGrade.Second:
                     {
-                        third.Clear();
-                        special.Clear();
-                        foreach (Category c in categories)
+                        MainPage.Current.Third.Clear();
+                        MainPage.Current.Special.Clear();
+                        foreach (Category c in MainPage.Current.Categories)
                         {
-                            if (c.Num.Remove(2) == categorySelected.Num.Remove(2) && c.CategoryGrade == CategoryGrade.Third)
+                            if (c.NumString.Remove(2) == categorySelected.NumString.Remove(2) && c.CategoryGrade == CategoryGrade.Third)
                             {
-                                third.Add(c);
+                                MainPage.Current.Third.Add(c);
                             }
                         }
                         break;
                     }
                 case CategoryGrade.Third:
                     {
-                        special.Clear();
-                        foreach (Category c in categories)
+                        MainPage.Current.Special.Clear();
+                        foreach (Category c in MainPage.Current.Categories)
                         {
-                            if (c.Num.Remove(3) == categorySelected.Num.Remove(3) && c.CategoryGrade == CategoryGrade.Special)
+                            if (c.NumString.Remove(3) == categorySelected.NumString.Remove(3) && c.CategoryGrade == CategoryGrade.Special)
                             {
-                                special.Add(c);
+                                MainPage.Current.Special.Add(c);
                             }
                         }
                         break;

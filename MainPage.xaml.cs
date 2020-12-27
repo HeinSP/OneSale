@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Universal.SqlSOperation;
 using Windows.UI.Text;
+using OneSale.Elements;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -47,8 +48,27 @@ namespace OneSale
         }
         private void Initialize()
         {
+            Current = this;
+            Views.MallsPage.RefreshMalls();
+            Views.CategoriesPage.RefreshCategories();
             navigationView.SelectedItem = navigationView.MenuItems.OfType<Microsoft.UI.Xaml.Controls.NavigationViewItem>().First();
         }
+        internal static MainPage Current;
+        ObservableElements<Category> categories = new ObservableElements<Category>();
+        ObservableElements<Category> first = new ObservableElements<Category>();
+        ObservableElements<Category> second = new ObservableElements<Category>();
+        ObservableElements<Category> third = new ObservableElements<Category>();
+        ObservableElements<Category> special = new ObservableElements<Category>();
+        ObservableElements<Mall> malls = new ObservableElements<Mall>();
+        ObservableElements<Shop> shops = new ObservableElements<Shop>();
+
+        internal ObservableElements<Category> Categories { get => categories; set => categories = value; }
+        internal ObservableElements<Category> First { get => first; set => first = value; }
+        internal ObservableElements<Category> Second { get => second; set => second = value; }
+        internal ObservableElements<Category> Third { get => third; set => third = value; }
+        internal ObservableElements<Category> Special { get => special; set => special = value; }
+        internal ObservableElements<Mall> Malls { get => malls; set => malls = value; }
+        internal ObservableElements<Shop> Shops { get => shops; set => shops = value; }
 
         private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
         {

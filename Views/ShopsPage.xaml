@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="OneSale.Views.ShopsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OneSale.Views"
+    xmlns:common="using:OneSale.Common"
+    xmlns:elements="using:OneSale.Elements"
+    xmlns:main="using:OneSale"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <DataTemplate x:Key="ShopTemplate" x:DataType="elements:Shop">
+            <StackPanel Width="208">
+                <Rectangle Width="192" Height="128" Fill="BlueViolet"/>
+                <TextBlock FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center" Text="{x:Bind Caption}" />
+                <TextBlock FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center" Text="{x:Bind Num}" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    <RelativePanel>
+        <muxc:ItemsRepeaterScrollHost >
+            <ScrollViewer>
+                <muxc:ItemsRepeater x:Name="mallRepeater"
+                                            HorizontalAlignment="Stretch"
+                                            ItemsSource="{x:Bind main:MainPage.Current.Shops}"
+                                            ItemTemplate="{StaticResource ShopTemplate}">
+                    <muxc:ItemsRepeater.Layout>
+                        <common:VariedImageSizeLayout Width="208" />
+                    </muxc:ItemsRepeater.Layout>
+                </muxc:ItemsRepeater>
+            </ScrollViewer>
+        </muxc:ItemsRepeaterScrollHost>
+    </RelativePanel>
+</Page>

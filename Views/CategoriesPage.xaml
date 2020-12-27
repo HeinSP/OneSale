@@ -4,12 +4,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:OneSale.Views"
+    xmlns:common="using:OneSale.Common"
     xmlns:elements="using:OneSale.Elements"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:main="using:OneSale"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:common="using:OneSale.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="Transparent">
 
     <Page.Resources>
         <DataTemplate x:Key="CategoryTemplate" x:DataType="elements:Category">
@@ -30,7 +32,7 @@
                         <muxc:ItemsRepeater x:Name="firstCategoryRepeater"
                                             Tag="1"
                                             HorizontalAlignment="Stretch"
-                                            ItemsSource="{x:Bind first}"
+                                            ItemsSource="{x:Bind main:MainPage.Current.First}"
                                             ItemTemplate="{StaticResource CategoryTemplate}">
                             <muxc:ItemsRepeater.Layout>
                                 <common:VariedImageSizeLayout Width="120" />
@@ -44,7 +46,7 @@
                         <muxc:ItemsRepeater x:Name="secondCategoryRepeater"
                                             Tag="1"
                                             HorizontalAlignment="Stretch"
-                                            ItemsSource="{x:Bind second}"
+                                            ItemsSource="{x:Bind main:MainPage.Current.Second}"
                                             ItemTemplate="{StaticResource CategoryTemplate}">
                             <muxc:ItemsRepeater.Layout>
                                 <common:VariedImageSizeLayout Width="120" />
@@ -58,7 +60,7 @@
                         <muxc:ItemsRepeater x:Name="thirdCategoryRepeater"
                                             Tag="1"
                                             HorizontalAlignment="Stretch"
-                                            ItemsSource="{x:Bind third}"
+                                            ItemsSource="{x:Bind main:MainPage.Current.Third}"
                                             ItemTemplate="{StaticResource CategoryTemplate}">
                             <muxc:ItemsRepeater.Layout>
                                 <common:VariedImageSizeLayout Width="120" />
@@ -72,7 +74,7 @@
                         <muxc:ItemsRepeater x:Name="specialCategoryRepeater"
                                             Tag="1"
                                             HorizontalAlignment="Stretch"
-                                            ItemsSource="{x:Bind special}"
+                                            ItemsSource="{x:Bind main:MainPage.Current.Special}"
                                             ItemTemplate="{StaticResource CategoryTemplate}">
                             <muxc:ItemsRepeater.Layout>
                                 <common:VariedImageSizeLayout Width="120" />

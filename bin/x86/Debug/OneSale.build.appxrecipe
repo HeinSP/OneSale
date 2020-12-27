@@ -73,14 +73,38 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.18362.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Lib\CeresTemp.txt">
-      <PackagePath>Lib\CeresTemp.txt</PackagePath>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\01.png">
+      <PackagePath>Assets\Malls\01.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Lib\Initialization.sql">
-      <PackagePath>Lib\Initialization.sql</PackagePath>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\02.png">
+      <PackagePath>Assets\Malls\02.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\03.png">
+      <PackagePath>Assets\Malls\03.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\04.png">
+      <PackagePath>Assets\Malls\04.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\05.png">
+      <PackagePath>Assets\Malls\05.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\06.png">
+      <PackagePath>Assets\Malls\06.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\07.png">
+      <PackagePath>Assets\Malls\07.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\08.png">
+      <PackagePath>Assets\Malls\08.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\09.png">
+      <PackagePath>Assets\Malls\09.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\10.png">
+      <PackagePath>Assets\Malls\10.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\11.png">
+      <PackagePath>Assets\Malls\11.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -109,6 +133,15 @@
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Lib\CeresTemp.txt">
+      <PackagePath>Lib\CeresTemp.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Lib\Initialization.sql">
+      <PackagePath>Lib\Initialization.sql</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\OneSale.xr.xml">
       <PackagePath>OneSale.xr.xml</PackagePath>
     </AppxPackagedFile>
@@ -127,11 +160,17 @@
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\LinksPage.xbf">
       <PackagePath>Views\LinksPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\MallsPage.xbf">
+      <PackagePath>Views\MallsPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\ProductsPage.xbf">
       <PackagePath>Views\ProductsPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\SettingsPage.xbf">
       <PackagePath>Views\SettingsPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\ShopsPage.xbf">
+      <PackagePath>Views\ShopsPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\bin\x86\Debug\Views\ViewsDictionary.xbf">
       <PackagePath>Views\ViewsDictionary.xbf</PackagePath>

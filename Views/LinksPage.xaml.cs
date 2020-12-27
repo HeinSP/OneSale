@@ -35,48 +35,10 @@ namespace OneSale.Views
         {
             this.InitializeComponent();
             InitializeData();
-            InitializeCategory();
-            //repeater2.ItemsSource = Enumerable.Range(0, 500);
         }
-
-        private void InitializeCategory()
-        {
-            categories.Clear();
-            first.Clear();
-            second.Clear();
-            third.Clear();
-            special.Clear();
-            SelectLib categoryLib = new SelectLib("categoryLib");
-            categoryLib.GetReader("Categories", "");
-            categories = Category.GetCategories(categoryLib.DbReader);
-            foreach (Category category in categories)
-            {
-                switch (category.CategoryGrade)
-                {
-                    case CategoryGrade.First:
-                        {
-                            first.Add(category);
-                            cbxFirst.Items.Add(category.Caption);
-                            break;
-                        }
-                }
-            }
-        }
-
-        ObservableCollection<Category> categories = new ObservableCollection<Category>();
-        ObservableCollection<Category> first = new ObservableCollection<Category>();
-        ObservableCollection<Category> second = new ObservableCollection<Category>();
-        ObservableCollection<Category> third = new ObservableCollection<Category>();
-        ObservableCollection<Category> special = new ObservableCollection<Category>();
-
-
-
-        private Random random = new Random();
-        private int MaxLength = 425;
 
         public MyItemsSource filteredRecipeData = new MyItemsSource(null);
         public List<Recipe> staticRecipeData;
-        private bool IsSortDescending = false;
 
         private void InitializeData()
         {
@@ -88,33 +50,14 @@ namespace OneSale.Views
                 new NestedCategory("Proteins", GetProteins())
             };
 
-            /*
-            outerRepeater.ItemsSource = nestedCategories;
-
-            // Set sample code to display on page's initial load
-            SampleCodeLayout.Value = @"<muxc:StackLayout x:Name=""VerticalStackLayout"" Orientation=""Vertical"" Spacing=""8""/>";
-
-            SampleCodeDT.Value = @"<DataTemplate x:Key=""HorizontalBarTemplate"" x:DataType=""l:Bar"">
-    <Border Background=""{ThemeResource SystemChromeLowColor}"" Width=""{x:Bind MaxLength}"" >
-        <Rectangle Fill=""{ThemeResource SystemAccentColor}"" Width=""{x:Bind Length}"" 
-                   Height=""24"" HorizontalAlignment=""Left""/> 
-    </Border>
-</DataTemplate>";
-
-            SampleCodeLayout2.Value = @"<common:ActivityFeedLayout x:Key=""MyFeedLayout"" ColumnSpacing=""12""
-                          RowSpacing=""12"" MinItemSize=""80, 108""/>";
-
             // Initialize list of colors for animatedScrollRepeater
-            animatedScrollRepeater.ItemsSource = GetColors();
-            animatedScrollRepeater.ElementPrepared += OnElementPrepared;
-            */
+            VariedImageSizeRepeater.ElementPrepared += OnElementPrepared;
             // Initialize custom MyItemsSource object with new recipe data
             List<Recipe> RecipeList = GetRecipeList();
             filteredRecipeData.InitializeCollection(RecipeList);
             // Save a static copy to compare to while filtering
             staticRecipeData = RecipeList;
             VariedImageSizeRepeater.ItemsSource = filteredRecipeData;
-
         }
 
         private ObservableCollection<string> GetFruits()
@@ -135,34 +78,6 @@ namespace OneSale.Views
             return new ObservableCollection<string> { "Steak", "Chicken", "Tofu", "Salmon", "Pork", "Chickpeas", "Eggs" };
         }
 
-        // ==========================================================================
-        // Virtualizing, scrollable list of items laid out by ItemsRepeater
-        // ==========================================================================
-        /*
-        private void LayoutBtn_Click(object sender, RoutedEventArgs e)
-        {
-            string layoutKey = ((FrameworkElement)sender).Tag as string;
-
-            repeater2.Layout = Resources[layoutKey] as Microsoft.UI.Xaml.Controls.VirtualizingLayout;
-
-            layout2.Value = layoutKey;
-
-            if (layoutKey == "UniformGridLayout2")
-            {
-                SampleCodeLayout2.Value = @"<muxc:UniformGridLayout x:Key=""UniformGridLayout2"" MinItemWidth=""108"" MinItemHeight=""108""
-                   MinRowSpacing=""12"" MinColumnSpacing=""12""/>";
-            }
-            else if (layoutKey == "MyFeedLayout")
-            {
-                SampleCodeLayout2.Value = @"<common:ActivityFeedLayout x:Key=""MyFeedLayout"" ColumnSpacing=""12""
-                          RowSpacing=""12"" MinItemSize=""80, 108""/>";
-            }
-        }
-        */
-        // ==========================================================================
-        // Animated Scrolling ItemsRepeater with Content Sample
-        // ==========================================================================
-        
         private IList<string> GetColors()
         {
             // Initialize list of colors for animated scrolling sample
@@ -176,31 +91,100 @@ namespace OneSale.Views
             return colors;
 
         }
-        /*
-        private void Animated_GotItem(object sender, RoutedEventArgs e)
+
+        private List<Recipe> GetRecipeList()
         {
-            var item = sender as FrameworkElement;
-            item.StartBringIntoView(new BringIntoViewOptions()
+            // Initialize list of recipes for varied image size layout sample
+            var rnd = new Random();
+            List<Recipe> tempList = new List<Recipe>(
+                                        Enumerable.Range(0, 100).Select(k =>
+                                            new Recipe
+                                            {
+                                                Num = k,
+                                                Name = "Recipe " + k.ToString(),
+                                                Color = GetColors()[(k % 100) + 1]
+                                            }));
+            foreach (Recipe rec in tempList)
             {
-                VerticalAlignmentRatio = 0.5,
-                AnimationDesired = true,
-            });
+                // Add one food from each option into the recipe's ingredient list and ingredient string
+                string fruitOption = GetFruits()[rnd.Next(0, 6)];
+                string vegOption = GetVegetables()[rnd.Next(0, 6)];
+                string grainOption = GetGrains()[rnd.Next(0, 6)];
+                string proteinOption = GetProteins()[rnd.Next(0, 6)];
+                rec.Ingredients = "\n" + fruitOption + "\n" + vegOption + "\n" + grainOption + "\n" + proteinOption;
+                rec.IngList = new List<string>() { fruitOption, vegOption, grainOption, proteinOption };
 
-            // Update corresponding rectangle with selected color
-            Button senderBtn = sender as Button;
-            colorRectangle.Fill = senderBtn.Background;
+                // Add extra ingredients so items have varied heights in the layout
+                rec.RandomizeIngredients();
+                //filteredRecipeData.Add(rec);
+            }
+
+            return tempList;
         }
-        */
 
-        /* This function occurs each time an element is made ready for use.
-         * This is necessary for virtualization. */
-        /*
+        private void cbxFirst_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string caption = cbxFirst.SelectedItem.ToString();
+            Category categorySelected = MainPage.Current.Categories.Single(check => check.Caption == caption);
+            MainPage.Current.Second.Clear();
+            MainPage.Current.Third.Clear();
+            MainPage.Current.Special.Clear();
+            cbxSecond.Items.Clear();
+            cbxThird.Items.Clear();
+            foreach (Category c in MainPage.Current.Categories)
+            {
+                if (c.NumString[0] == categorySelected.NumString[0] && c.CategoryGrade == CategoryGrade.Second)
+                {
+                    MainPage.Current.Second.Add(c);
+                    cbxSecond.Items.Add(c.Caption);
+                }
+            }
+        }
+
+        private void cbxSecond_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbxSecond.Items.Count == 0)
+            {
+                return;
+            }
+            string caption = cbxSecond.SelectedItem.ToString();
+            Category categorySelected = MainPage.Current.Categories.Single(check => check.Caption == caption);
+            MainPage.Current.Third.Clear();
+            MainPage.Current.Special.Clear();
+            cbxThird.Items.Clear();
+            foreach (Category c in MainPage.Current.Categories)
+            {
+                if (c.NumString.Remove(2) == categorySelected.NumString.Remove(2) && c.CategoryGrade == CategoryGrade.Third)
+                {
+                    MainPage.Current.Third.Add(c);
+                    cbxThird.Items.Add(c.Caption);
+                }
+            }
+        }
+
+        private void cbxThird_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void StackPanel_Tapped(object sender, RoutedEventArgs e)
+        {
+            StackPanel stackPanel = sender as StackPanel;
+            MainPage.Current.LibInfoBar.Message = stackPanel.Tag + " loaded.";
+        }
         private void OnElementPrepared(Microsoft.UI.Xaml.Controls.ItemsRepeater sender, Microsoft.UI.Xaml.Controls.ItemsRepeaterElementPreparedEventArgs args)
         {
             var item = ElementCompositionPreview.GetElementVisual(args.Element);
             var svVisual = ElementCompositionPreview.GetElementVisual(Animated_ScrollViewer);
             var scrollProperties = ElementCompositionPreview.GetScrollViewerManipulationPropertySet(Animated_ScrollViewer);
-
+            StackPanel stackPanel = args.Element as StackPanel;
+            int preparedItems = int.Parse(stackPanel.Tag.ToString().Substring(7));
+            if (preparedItems >= staticRecipeData.Count - 1)
+            {
+                staticRecipeData.AddRange(GetRecipeList());
+                //filteredRecipeData.AddToCollection(GetRecipeList());
+            }
+            MainPage.Current.LibInfoBar.Message = stackPanel.Tag + " prepared ... Total Items : " + filteredRecipeData.Count;
             var scaleExpresion = scrollProperties.Compositor.CreateExpressionAnimation();
             scaleExpresion.SetReferenceParameter("svVisual", svVisual);
             scaleExpresion.SetReferenceParameter("scrollProperties", scrollProperties);
@@ -217,163 +201,6 @@ namespace OneSale.Views
             centerPointExpression.Expression = "Vector3(item.Size.X/2, item.Size.Y/2, 0)";
             item.StartAnimation("CenterPoint", centerPointExpression);
         }
-
-        private void GetButtonSize(object sender, RoutedEventArgs e)
-        {
-            Button AnimatedBtn = sender as Button;
-            AnimatedBtnHeight = AnimatedBtn.ActualHeight;
-            AnimatedBtnMargin = AnimatedBtn.Margin;
-        }
-
-        private void Animated_ScrollViewer_ViewChanging(object sender, ScrollViewerViewChangingEventArgs e)
-        {
-            Button SelectedItem = GetSelectedItemFromViewport() as Button;
-            // Update corresponding rectangle with selected color
-            colorRectangle.Fill = SelectedItem.Background;
-        }
-
-        // Find centerpoint of ScrollViewer
-        private double CenterPointOfViewportInExtent()
-        {
-            return Animated_ScrollViewer.VerticalOffset + Animated_ScrollViewer.ViewportHeight / 2;
-        }
-
-        // Find index of the item that's at the center of the viewport
-        private int GetSelectedIndexFromViewport()
-        {
-            int selectedItemIndex = (int)Math.Floor(CenterPointOfViewportInExtent() / ((double)AnimatedBtnMargin.Top + AnimatedBtnHeight));
-            selectedItemIndex %= animatedScrollRepeater.ItemsSourceView.Count;
-            return selectedItemIndex;
-        }
-
-        // Return item that's currently in center of viewport
-        private object GetSelectedItemFromViewport()
-        {
-            var selectedIndex = GetSelectedIndexFromViewport();
-            var selectedElement = animatedScrollRepeater.TryGetElement(selectedIndex) as Button;
-            return selectedElement;
-        }
-        */
-        // ==========================================================================
-        // VariedImageSize Layout with Filtering/Sorting
-        // ==========================================================================
-        private List<Recipe> GetRecipeList()
-        {
-            // Initialize list of recipes for varied image size layout sample
-            var rnd = new Random();
-            List<Recipe> tempList = new List<Recipe>(
-                                        Enumerable.Range(0, 1000).Select(k =>
-                                            new Recipe
-                                            {
-                                                Num = k,
-                                                Name = "Recipe " + k.ToString(),
-                                                Color = GetColors()[(k % 100) + 1]
-                                            }));
-
-            foreach (Recipe rec in tempList)
-            {
-                // Add one food from each option into the recipe's ingredient list and ingredient string
-                string fruitOption = GetFruits()[rnd.Next(0, 6)];
-                string vegOption = GetVegetables()[rnd.Next(0, 6)];
-                string grainOption = GetGrains()[rnd.Next(0, 6)];
-                string proteinOption = GetProteins()[rnd.Next(0, 6)];
-                rec.Ingredients = "\n" + fruitOption + "\n" + vegOption + "\n" + grainOption + "\n" + proteinOption;
-                rec.IngList = new List<string>() { fruitOption, vegOption, grainOption, proteinOption };
-
-                // Add extra ingredients so items have varied heights in the layout
-                rec.RandomizeIngredients();
-            }
-
-            return tempList;
-        }
-        private void OnEnableAnimationsChanged(object sender, RoutedEventArgs e)
-        {
-#if WINUI_PRERELEASE
-             VariedImageSizeRepeater.Animator = EnableAnimations.IsChecked.GetValueOrDefault() ? new DefaultElementAnimator() : null;
-#endif
-        }
-
-        public void FilterRecipes_FilterChanged(object sender, RoutedEventArgs e)
-        {
-            UpdateSortAndFilter();
-        }
-
-        private void OnSortAscClick(object sender, RoutedEventArgs e)
-        {
-            if (IsSortDescending == true)
-            {
-                IsSortDescending = false;
-                UpdateSortAndFilter();
-            }
-        }
-
-        private void OnSortDesClick(object sender, RoutedEventArgs e)
-        {
-            if (!IsSortDescending == true)
-            {
-                IsSortDescending = true;
-                UpdateSortAndFilter();
-            }
-        }
-
-        private void UpdateSortAndFilter()
-        {
-            /*
-            // Find all recipes that ingredients include what was typed into the filtering text box
-            var filteredTypes = staticRecipeData.Where(i => i.Ingredients.Contains(FilterRecipes.Text, StringComparison.InvariantCultureIgnoreCase));
-            // Sort the recipes by whichever sorting mode was last selected (least to most ingredients by default)
-            var sortedFilteredTypes = IsSortDescending ?
-                filteredTypes.OrderByDescending(i => i.IngList.Count()) :
-                filteredTypes.OrderBy(i => i.IngList.Count());
-            // Re-initialize MyItemsSource object with this newly filtered data
-            filteredRecipeData.InitializeCollection(sortedFilteredTypes);
-            */
-        }
-
-        private void cbxFirst_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string caption = cbxFirst.SelectedItem.ToString();
-            Category categorySelected = new Category(categories.Single(check => check.Caption == caption).Num, caption);
-            second.Clear();
-            third.Clear();
-            special.Clear();
-            cbxSecond.Items.Clear();
-            cbxThird.Items.Clear();
-            foreach (Category c in categories)
-            {
-                if (c.Num[0] == categorySelected.Num[0] && c.CategoryGrade == CategoryGrade.Second)
-                {
-                    second.Add(c);
-                    cbxSecond.Items.Add(c.Caption);
-                }
-            }
-        }
-
-        private void cbxSecond_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cbxSecond.Items.Count == 0)
-            {
-                return;
-            }
-            string caption = cbxSecond.SelectedItem.ToString();
-            Category categorySelected = new Category(categories.Single(check => check.Caption == caption).Num, caption);
-            third.Clear();
-            special.Clear();
-            cbxThird.Items.Clear();
-            foreach (Category c in categories)
-            {
-                if (c.Num.Remove(2) == categorySelected.Num.Remove(2) && c.CategoryGrade == CategoryGrade.Third)
-                {
-                    third.Add(c);
-                    cbxThird.Items.Add(c.Caption);
-                }
-            }
-        }
-
-        private void cbxThird_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 
     public class NestedCategory
@@ -384,25 +211,6 @@ namespace OneSale.Views
         {
             CategoryName = catName;
             CategoryItems = catItems;
-        }
-    }
-
-
-    public class MyDataTemplateSelector : DataTemplateSelector
-    {
-        public DataTemplate Normal { get; set; }
-        public DataTemplate Accent { get; set; }
-
-        protected override DataTemplate SelectTemplateCore(object item)
-        {
-            if ((int)item % 2 == 0)
-            {
-                return Normal;
-            }
-            else
-            {
-                return Accent;
-            }
         }
     }
 
@@ -430,29 +238,6 @@ namespace OneSale.Views
                 return null;
             }
         }
-    }
-
-    public class Bar
-    {
-        public Bar(double length, int max)
-        {
-            Length = length;
-            MaxLength = max;
-
-            Height = length / 4;
-            MaxHeight = max / 4;
-
-            Diameter = length / 6;
-            MaxDiameter = max / 6;
-        }
-        public double Length { get; set; }
-        public int MaxLength { get; set; }
-
-        public double Height { get; set; }
-        public double MaxHeight { get; set; }
-
-        public double Diameter { get; set; }
-        public double MaxDiameter { get; set; }
     }
 
     public class Recipe
@@ -510,6 +295,16 @@ namespace OneSale.Views
         public void InitializeCollection(IEnumerable<Recipe> collection)
         {
             inner.Clear();
+            if (collection != null)
+            {
+                inner.AddRange(collection);
+            }
+
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+        public void AddToCollection(IEnumerable<Recipe> collection)
+        {
+            //inner.Clear();
             if (collection != null)
             {
                 inner.AddRange(collection);

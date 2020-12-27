@@ -13,8 +13,6 @@ namespace OneSale.Elements
         {
 
         }
-        long num;
-        string caption;
         Product product;
         Quality quality;
         Unit unit;
@@ -28,7 +26,6 @@ namespace OneSale.Elements
         string linkAddress;
         string fullCaption;
 
-        public long Num { get => num; set => num = value; }
         internal Product Product { get => product; set => product = value; }
         internal Quality Quality { get => quality; set => quality = value; }
         internal Unit Unit { get => unit; set => unit = value; }
@@ -41,6 +38,5 @@ namespace OneSale.Elements
         public double Freight { get => freight; set => freight = value; }
         public string LinkAddress { get => linkAddress; set => linkAddress = value; }
         public string FullCaption { get => fullCaption; set => fullCaption = value; }
-        public string Caption { get => caption; set => caption = value; }
     }
 }

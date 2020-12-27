@@ -3,16 +3,17 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:OneSale.Views"
-    xmlns:cat="OneSale.Views.CategoriesPage"
     xmlns:common="using:OneSale.Common"
+    xmlns:elements="using:OneSale.Elements"
+    xmlns:main="using:OneSale"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:media="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d" Background="Transparent">
 
     <Page.Resources>
         <DataTemplate x:DataType="local:Recipe" x:Key="RecipeTemplate">
-            <StackPanel BorderThickness="1" Background="{ThemeResource UniversalBarDarkAcrylicBrush}" Margin="5">
+            <StackPanel BorderThickness="1" Background="{ThemeResource UniversalBarDarkAcrylicBrush}" Margin="5" Tapped="StackPanel_Tapped" Tag="{x:Bind Name}" GotFocus="StackPanel_Tapped">
                 <StackPanel Background="{x:Bind Color}" Margin="8" Height="75" Opacity=".8">
                     <TextBlock Text="{x:Bind Num.ToString()}" FontSize="35" TextAlignment="Center"
                         Padding="12"  Foreground="{ThemeResource SystemControlForegroundAltHighBrush}"/>
@@ -28,21 +29,10 @@
         </DataTemplate>
     </Page.Resources>
     <RelativePanel>
-        <Border x:Name="itemsRepeaterBorder" RelativePanel.LeftOf="filterPanel" RelativePanel.AlignBottomWith="commandBar" RelativePanel.AlignTopWithPanel="True">
-            <muxc:ItemsRepeaterScrollHost>
-                <ScrollViewer>
-                    <muxc:ItemsRepeater x:Name="VariedImageSizeRepeater"
-			            ItemTemplate="{StaticResource RecipeTemplate}">
-
-                        <muxc:ItemsRepeater.Layout>
-                            <common:VariedImageSizeLayout Width="200" />
-                        </muxc:ItemsRepeater.Layout>
-                    </muxc:ItemsRepeater>
-                </ScrollViewer>
-            </muxc:ItemsRepeaterScrollHost>
-        </Border>
-        <StackPanel x:Name="filterPanel" Width="220" Background="Transparent"
-            RelativePanel.AlignRightWithPanel="True" RelativePanel.Above="commandBar" RelativePanel.AlignTopWithPanel="True">
+        <StackPanel x:Name="filterPanel" Width="220" Background="Transparent" 
+                    RelativePanel.AlignRightWithPanel="True" 
+                    RelativePanel.Above="commandBar" 
+                    RelativePanel.AlignTopWithPanel="True">
             <TextBlock FontSize="{StaticResource UniversalSubFontSize}" Margin="{StaticResource UniversalSubMargin}" Text="Filter"/>
             <TextBlock Text="Category" FontSize="{StaticResource UniversalContentFontSize}" Margin="{StaticResource UniversalContentMargin}"/>
             <Grid>
@@ -65,7 +55,7 @@
                 <ComboBox Grid.Column="1" Grid.Row="2" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0" Name="cbxThird" SelectionChanged="cbxThird_SelectionChanged"></ComboBox>
                 <ComboBox Grid.Column="1" Grid.Row="3" Width="148" FontSize="{StaticResource UniversalContentFontSize}" Margin="8,4,0,0"></ComboBox>
             </Grid>
-            
+
             <TextBlock Text="Name" FontSize="{StaticResource UniversalContentFontSize}" Margin="{StaticResource UniversalContentMargin}"/>
             <AutoSuggestBox Width="200" HorizontalAlignment="Left" FontSize="{StaticResource UniversalContentFontSize}" Margin="{StaticResource UniversalContentMargin}"></AutoSuggestBox>
             <TextBlock Text="Final Price" FontSize="{StaticResource UniversalContentFontSize}" Margin="{StaticResource UniversalContentMargin}"/>
@@ -85,7 +75,19 @@
                 <Button Content="Most to Least" Margin="0,4,0,0"/>
             </StackPanel>
         </StackPanel>
+        <Border x:Name="itemsRepeaterBorder" RelativePanel.LeftOf="filterPanel" RelativePanel.AlignBottomWith="commandBar" RelativePanel.AlignTopWithPanel="True">
+            <muxc:ItemsRepeaterScrollHost>
+                <ScrollViewer x:Name="Animated_ScrollViewer">
+                    <muxc:ItemsRepeater x:Name="VariedImageSizeRepeater"
+			            ItemTemplate="{StaticResource RecipeTemplate}">
 
+                        <muxc:ItemsRepeater.Layout>
+                            <common:VariedImageSizeLayout Width="200" />
+                        </muxc:ItemsRepeater.Layout>
+                    </muxc:ItemsRepeater>
+                </ScrollViewer>
+            </muxc:ItemsRepeaterScrollHost>
+        </Border>
         <CommandBar Grid.Row="2" Background="{StaticResource UniversalSubPageDarkAcrylicBrush}" x:Name="commandBar" Height="Auto" DefaultLabelPosition="Right" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True">
 
             <AppBarButton x:Name="btnRefresh" Icon="Refresh" Label="Refresh" Style="{StaticResource UniversalAppBarDarkAcrylicStyle}">

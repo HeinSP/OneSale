@@ -14,6 +14,15 @@
         <media:AcrylicBrush BackgroundSource="HostBackdrop" TintOpacity="0.3" TintColor="#E6E6E6" FallbackColor="#E6E6E6" />
     </Page.Background>
     <RelativePanel>
+        <muxc:InfoBar RelativePanel.AlignBottomWithPanel="True" 
+                      RelativePanel.AlignRightWithPanel="True" 
+                      RelativePanel.AlignLeftWithPanel="True" 
+                      x:FieldModifier="public"
+                      x:Name="LibInfoBar" IsOpen="True" IsIconVisible="True" IsClosable="False" Title="" Message="This is the information bar3." />
+        <TextBlock x:Name="tbkInfo" 
+                   RelativePanel.AlignRightWithPanel="True" 
+                   RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.Above="LibInfoBar"/>
         <muxc:NavigationView x:Name="navigationView" OpenPaneLength="160" Background="Transparent"
             IsSettingsVisible="True"
             IsBackButtonVisible="Collapsed"
@@ -109,14 +118,5 @@
 
             <Frame x:Name="navigationFrame" />
         </muxc:NavigationView>
-        <SplitView RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" x:Name="splitView" x:FieldModifier="Public" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" IsPaneOpen="False" PanePlacement="Right" OpenPaneLength="240" DisplayMode="Overlay">
-            <SplitView.Pane>
-                <StackPanel Padding="20" Orientation="Vertical" Width="240" HorizontalAlignment="Left">
-                    <TextBlock Text="Test"></TextBlock>
-                </StackPanel>
-            </SplitView.Pane>
-        </SplitView>
-        <TextBlock x:Name="tbkInfo" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Above="LibInfoBar"/>
-        <muxc:InfoBar RelativePanel.AlignBottomWithPanel="True" x:Name="LibInfoBar" IsOpen="True" IsIconVisible="True" IsClosable="False" Title="" Message="This is the information bar3." RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
     </RelativePanel>
 </Page>

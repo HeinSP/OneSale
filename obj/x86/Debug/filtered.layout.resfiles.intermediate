@@ -1,5 +1,16 @@
 WinMetadata\Windows.winmd
 Assets\LockScreenLogo.scale-200.png
+Assets\Malls\01.png
+Assets\Malls\02.png
+Assets\Malls\03.png
+Assets\Malls\04.png
+Assets\Malls\05.png
+Assets\Malls\06.png
+Assets\Malls\07.png
+Assets\Malls\08.png
+Assets\Malls\09.png
+Assets\Malls\10.png
+Assets\Malls\11.png
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
 Assets\Square44x44Logo.scale-200.png
@@ -12,8 +23,10 @@ OneSale.xr.xml
 Styles\Styles.xbf
 Views\CategoriesPage.xbf
 Views\LinksPage.xbf
+Views\MallsPage.xbf
 Views\ProductsPage.xbf
 Views\SettingsPage.xbf
+Views\ShopsPage.xbf
 Views\ViewsDictionary.xbf
 Lib\CeresTemp.txt
 Lib\Initialization.sql

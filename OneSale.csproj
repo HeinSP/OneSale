@@ -122,6 +122,7 @@
     <Compile Include="Common\VariedImageSizeLayout.cs" />
     <Compile Include="Elements\Category.cs" />
     <Compile Include="Elements\Const.cs" />
+    <Compile Include="Elements\Element.cs" />
     <Compile Include="Elements\Link.cs" />
     <Compile Include="Elements\Mall.cs" />
     <Compile Include="Elements\Plan.cs" />
@@ -140,11 +141,17 @@
     <Compile Include="Views\LinksPage.xaml.cs">
       <DependentUpon>LinksPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MallsPage.xaml.cs">
+      <DependentUpon>MallsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProductsPage.xaml.cs">
       <DependentUpon>ProductsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShopsPage.xaml.cs">
+      <DependentUpon>ShopsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +160,17 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Malls\01.png" />
+    <Content Include="Assets\Malls\02.png" />
+    <Content Include="Assets\Malls\03.png" />
+    <Content Include="Assets\Malls\04.png" />
+    <Content Include="Assets\Malls\05.png" />
+    <Content Include="Assets\Malls\06.png" />
+    <Content Include="Assets\Malls\07.png" />
+    <Content Include="Assets\Malls\08.png" />
+    <Content Include="Assets\Malls\09.png" />
+    <Content Include="Assets\Malls\10.png" />
+    <Content Include="Assets\Malls\11.png" />
     <Content Include="Lib\CeresTemp.txt" />
     <Content Include="Lib\Initialization.sql" />
     <Content Include="Properties\Default.rd.xml" />
@@ -185,11 +203,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\MallsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProductsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShopsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,6 +238,7 @@
       <Name>Universal</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

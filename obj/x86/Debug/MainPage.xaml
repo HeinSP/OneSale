@@ -14,7 +14,16 @@
         <media:AcrylicBrush BackgroundSource="HostBackdrop" TintOpacity="0.3" TintColor="#E6E6E6" FallbackColor="#E6E6E6" />
     </Page.Background>
     <RelativePanel>
-        <muxc:NavigationView x:ConnectionId='2' x:Name="navigationView" OpenPaneLength="160" Background="Transparent"
+        <muxc:InfoBar x:ConnectionId='2' RelativePanel.AlignBottomWithPanel="True" 
+                      RelativePanel.AlignRightWithPanel="True" 
+                      RelativePanel.AlignLeftWithPanel="True" 
+                      x:FieldModifier="public"
+                      x:Name="LibInfoBar" IsOpen="True" IsIconVisible="True" IsClosable="False" Title="" Message="This is the information bar3." />
+        <TextBlock x:ConnectionId='3' x:Name="tbkInfo" 
+                   RelativePanel.AlignRightWithPanel="True" 
+                   RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.Above="LibInfoBar"/>
+        <muxc:NavigationView x:ConnectionId='4' x:Name="navigationView" OpenPaneLength="160" Background="Transparent"
             IsSettingsVisible="True"
             IsBackButtonVisible="Collapsed"
             IsBackEnabled="True"
@@ -28,33 +37,33 @@
             RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.Above="tbkInfo">
 
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem x:ConnectionId='6' Content="Links" Tag="Links" x:Name="LinkItem">
+                <muxc:NavigationViewItem x:ConnectionId='5' Content="Links" Tag="Links" x:Name="LinkItem">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE71B;"/>
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem x:ConnectionId='7' Content="Products" Tag="Products" x:Name="ProductsItem" SelectsOnInvoked="True">
+                <muxc:NavigationViewItem x:ConnectionId='6' Content="Products" Tag="Products" x:Name="ProductsItem" SelectsOnInvoked="True">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE74C;"/>
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem x:ConnectionId='8' Content="Plans" Tag="Plans" x:Name="PlansItem">
+                <muxc:NavigationViewItem x:ConnectionId='7' Content="Plans" Tag="Plans" x:Name="PlansItem">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE762;"/>
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
                 
-                <muxc:NavigationViewItem x:ConnectionId='9' Content="Shops" Tag="Shops" x:Name="ShopsItem">
+                <muxc:NavigationViewItem x:ConnectionId='8' Content="Shops" Tag="Shops" x:Name="ShopsItem">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xF133;"/>
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem x:ConnectionId='10' Content="Malls" Tag="Malls" x:Name="MallsItem">
+                <muxc:NavigationViewItem x:ConnectionId='9' Content="Malls" Tag="Malls" x:Name="MallsItem">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE753;"/>
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem x:ConnectionId='11' Content="Categories" Tag="Categories" x:Name="CategoriesItem">
+                <muxc:NavigationViewItem x:ConnectionId='10' Content="Categories" Tag="Categories" x:Name="CategoriesItem">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xF168;"/>
                     </muxc:NavigationViewItem.Icon>
@@ -64,8 +73,8 @@
             </muxc:NavigationView.MenuItems>
 
             <muxc:NavigationView.PaneFooter>
-                <StackPanel x:ConnectionId='12' x:Name="FooterStackPanel" Orientation="Vertical" Visibility="Visible">
-                    <muxc:NavigationViewItem x:ConnectionId='13' AutomationProperties.Name="nviAdd" Icon="Add" Content="Add"                       >
+                <StackPanel x:ConnectionId='11' x:Name="FooterStackPanel" Orientation="Vertical" Visibility="Visible">
+                    <muxc:NavigationViewItem x:ConnectionId='12' AutomationProperties.Name="nviAdd" Icon="Add" Content="Add"                       >
                         <FlyoutBase.AttachedFlyout>
                             <Flyout>
                                 <StackPanel>
@@ -107,17 +116,8 @@
                 </StackPanel>
             </muxc:NavigationView.PaneFooter>
 
-            <Frame x:ConnectionId='14' x:Name="navigationFrame" />
+            <Frame x:ConnectionId='13' x:Name="navigationFrame" />
         </muxc:NavigationView>
-        <SplitView x:ConnectionId='3' RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" x:Name="splitView" x:FieldModifier="Public" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" IsPaneOpen="False" PanePlacement="Right" OpenPaneLength="240" DisplayMode="Overlay">
-            <SplitView.Pane>
-                <StackPanel Padding="20" Orientation="Vertical" Width="240" HorizontalAlignment="Left">
-                    <TextBlock Text="Test"></TextBlock>
-                </StackPanel>
-            </SplitView.Pane>
-        </SplitView>
-        <TextBlock x:ConnectionId='4' x:Name="tbkInfo" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Above="LibInfoBar"/>
-        <muxc:InfoBar x:ConnectionId='5' RelativePanel.AlignBottomWithPanel="True" x:Name="LibInfoBar" IsOpen="True" IsIconVisible="True" IsClosable="False" Title="" Message="This is the information bar3." RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
     </RelativePanel>
 </Page>
 

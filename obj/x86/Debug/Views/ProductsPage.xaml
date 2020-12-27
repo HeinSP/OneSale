@@ -1,33 +1,37 @@
-﻿<Page
+﻿<Page x:ConnectionId='1'
     x:Class="OneSale.Views.ProductsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:OneSale.Views"
+    xmlns:common="using:OneSale.Common"
+    xmlns:elements="using:OneSale.Elements"
+    xmlns:main="using:OneSale"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <RelativePanel Background="AliceBlue" Width="500" Height="72">
-        <TextBlock x:ConnectionId='2' RelativePanel.AlignTopWithPanel="True"
-                   RelativePanel.AlignLeftWithPanel="True"
-                   x:Name="tbkName" Margin="0,4,0,8"
-                   FontSize="16" Text="This is the products page.ApplicationPageBackgroundThemeBrush"/>
-        <FontIcon x:ConnectionId='3' RelativePanel.Below="tbkName" VerticalAlignment="Center"
-                  x:Name="icon" Glyph="&#xEA79;" Width="32" Height="32"/>
-        <Rectangle x:ConnectionId='4' RelativePanel.RightOf="icon"
-                   RelativePanel.Below="tbkName"
-                   x:Name="rect" Fill="LightSlateGray"
-                   Width="32" Height="32"/>
-        <TextBlock x:ConnectionId='5' x:Name="oPrice"
-                   RelativePanel.RightOf="rect"
-                   RelativePanel.Below="tbkName"
-                   VerticalAlignment="Center"
-                   Text="Origin : 222.33"/>
-        <TextBlock x:ConnectionId='6' x:Name="final"
-                   RelativePanel.Below="tbkName"
-                   RelativePanel.AlignRightWithPanel="True"
-                   Text="Final : 80.66" FontSize="28"/>
+    <Page.Resources>
+        <DataTemplate x:Key="ProductTemplate"                              >
+            <StackPanel x:ConnectionId='3' Width="208"                   >
+                <Rectangle Width="192" Height="192" Fill="Yellow"/>
+                <TextBlock x:ConnectionId='4' FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center"                        />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    <RelativePanel>
+        <muxc:ItemsRepeaterScrollHost>
+            <ScrollViewer x:ConnectionId='5'                                       >
+                <muxc:ItemsRepeater x:ConnectionId='6' x:Name="productRepeater"
+                                            HorizontalAlignment="Stretch"
+                                                                           
+                                            ItemTemplate="{StaticResource ProductTemplate}">
+                    <muxc:ItemsRepeater.Layout>
+                        <common:VariedImageSizeLayout Width="208" />
+                    </muxc:ItemsRepeater.Layout>
+                </muxc:ItemsRepeater>
+            </ScrollViewer>
+        </muxc:ItemsRepeaterScrollHost>
     </RelativePanel>
 </Page>
 
