@@ -106,6 +106,12 @@
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\11.png">
       <PackagePath>Assets\Malls\11.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\12.png">
+      <PackagePath>Assets\Malls\12.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\Malls\13.png">
+      <PackagePath>Assets\Malls\13.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hein\source\repos\OneSale\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>

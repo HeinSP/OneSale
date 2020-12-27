@@ -20,7 +20,7 @@
                         <BitmapImage UriSource="{x:Bind ImageUri}"/>
                     </Image.Source>
                 </Image>
-                <HyperlinkButton FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center" Content="{x:Bind Caption}" NavigateUri="{x:Bind Address}" />
+                <HyperlinkButton FontSize="{StaticResource UniversalContentFontSize}" Foreground="Black" HorizontalAlignment="Center" Content="{x:Bind Caption}" NavigateUri="{x:Bind Address}" />
             </StackPanel>
         </DataTemplate>
     </Page.Resources>

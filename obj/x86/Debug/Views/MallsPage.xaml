@@ -20,7 +20,7 @@
                         <BitmapImage x:ConnectionId='5'                              />
                     </Image.Source>
                 </Image>
-                <HyperlinkButton x:ConnectionId='4' FontSize="{StaticResource UniversalContentFontSize}" HorizontalAlignment="Center"                                                           />
+                <HyperlinkButton x:ConnectionId='4' FontSize="{StaticResource UniversalContentFontSize}" Foreground="Black" HorizontalAlignment="Center"                                                           />
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
